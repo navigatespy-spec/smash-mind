@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11142b">
+<meta name="description" content="16の質問から、あなたのスマブラの持ちキャラを推理する非公式の性格診断ゲーム。Wii・Wii U・Switchに対応。">
+<title>SMASH MIND | あなたの持ちキャラ、見抜きます。</title>
+<style>
+:root{--bg:#0d1124;--bg2:#141a33;--panel:#1b2340;--panel2:#242e50;--text:#f6f7ff;--muted:#b3bdd7;--line:rgba(183,201,247,.16);--cyan:#6debdc;--yellow:#ffd36d;--pink:#ff9bbd;--blue:#90a6ff;--red:#fdaab6;--shadow:0 20px 65px rgba(1,5,20,.34)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,system-ui,sans-serif;color:var(--text);background:radial-gradient(ellipse 650px 410px at 8% -4%,rgba(105,113,255,.15),transparent 80%),radial-gradient(ellipse 500px 500px at 96% 14%,rgba(58,224,195,.10),transparent 78%),var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}button:disabled{opacity:.55;cursor:not-allowed}a{color:var(--cyan)}.shell{width:min(100% - 36px,890px);margin:0 auto}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:13px}.brand{display:flex;align-items:center;gap:9px;font-weight:900;letter-spacing:.11em;font-size:18px;line-height:1.1}.mark{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(140deg,#9b9cff,#68efd6);color:#111528;font-size:18px;transform:rotate(-8deg)}.build{font-size:10px;letter-spacing:.12em;font-weight:850;color:#a8b8e2;border:1px solid var(--line);border-radius:99px;padding:7px 10px;white-space:nowrap}.main{padding-bottom:84px}.view{display:none}.view.active{display:block;animation:appear .33s ease-out}@keyframes appear{from{opacity:.2;transform:translateY(9px)}to{opacity:1;transform:none}}.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.18em;font-size:11px}.muted{color:var(--muted)}h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.035em;line-height:1.3}h1{font-size:clamp(33px,7vw,64px);font-weight:900;margin:18px 0 17px}h2{font-size:clamp(25px,5vw,40px);font-weight:900}h3{font-size:20px;font-weight:850}.accent{color:var(--cyan)}.subhead{font-size:16px;color:#c3cae1;line-height:1.9}.hero{padding:42px 0 20px;display:grid;grid-template-columns:minmax(0,1.16fr) minmax(240px,.84fr);align-items:center;gap:20px}.hero h1 span{white-space:nowrap}.sticker{display:inline-block;color:#10162a;background:var(--yellow);border-radius:7px;padding:4px 8px;transform:rotate(-3deg);font-size:12px;font-weight:900;margin-right:8px;vertical-align:middle}.hero-art{height:290px;position:relative;isolation:isolate;overflow:hidden;border-radius:27px;background:radial-gradient(circle at 53% 47%,#434b86,transparent 48%),linear-gradient(140deg,#202b58,#111932);border:1px solid var(--line);box-shadow:var(--shadow)}.orb{position:absolute;width:210px;height:210px;border-radius:50%;border:17px solid rgba(120,237,219,.2);left:50%;top:48%;transform:translate(-50%,-50%) rotate(-30deg)}.orb:after{content:"";position:absolute;inset:30px;border-radius:50%;border:1px dashed rgba(255,255,255,.28)}.hero-q{position:absolute;z-index:2;font-size:160px;line-height:1;font-weight:1000;font-family:Georgia,serif;color:#a6fff0;transform:translate(-50%,-52%) rotate(9deg);left:51%;top:50%;text-shadow:9px 14px 0 #2b4779,0 3px 38px rgba(115,243,230,.3)}.spark{position:absolute;z-index:3;color:var(--yellow);font-size:38px}.s1{top:22px;left:31px}.s2{bottom:21px;right:33px;color:#ff9ebe}.s3{right:16px;top:35px;color:#95a8ff;font-size:19px}.hero-tag{position:absolute;z-index:3;padding:7px 12px;font-weight:900;border-radius:9px;transform:rotate(-7deg);font-size:11px;box-shadow:0 7px 22px #080e2f4d}.tag1{left:24px;bottom:43px;background:#ffb9a7;color:#421b36}.tag2{right:19px;top:84px;background:#91eeeb;color:#102d35;transform:rotate(7deg)}.panel{border-radius:24px;border:1px solid var(--line);background:linear-gradient(165deg,rgba(38,48,82,.91),rgba(23,30,54,.98));box-shadow:var(--shadow)}.setup{padding:26px;margin:24px 0 18px}.section-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px}.section-top strong{font-size:20px}.step-label{font-size:11px;color:#a4b1d2;font-weight:850;letter-spacing:.11em;margin:20px 0 11px}.select-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.pick,.mode-pick,.chip{background:#151c37;border:1px solid #3b496e;border-radius:15px;color:#e9edff;transition:border-color .16s,background .16s,transform .16s;text-align:left}.pick{min-height:100px;padding:14px 12px;display:flex;flex-direction:column;justify-content:space-between;gap:7px}.pick span{font-size:25px}.pick b{font-size:15px}.pick small,.mode-pick small{display:block;color:#b1bedc;font-size:11px;margin-top:3px;line-height:1.5}.pick.selected,.mode-pick.selected,.chip.selected{border-color:var(--cyan);background:linear-gradient(140deg,#203d4d,#20304b);box-shadow:inset 0 0 0 1px rgba(114,234,214,.28)}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mode-pick{padding:14px 15px;min-height:82px}.mode-pick b{font-size:14px}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font-size:12px;padding:9px 13px;border-radius:100px;font-weight:700}.fieldrow{display:grid;grid-template-columns:1fr;gap:8px}.fieldrow input,.fieldrow select,.verify-row select{width:100%;padding:13px 15px;min-height:48px;border-radius:12px;background:#121a34;border:1px solid #455172;color:#f6f8ff}.hint{font-size:12px;color:#aebcda;margin:10px 0 0}.primary{width:100%;border:0;border-radius:15px;background:linear-gradient(100deg,#82f1df,#b0fff3);color:#0a2430;font-size:16px;font-weight:950;padding:17px 16px;box-shadow:0 10px 25px #36d6c628;transition:transform .2s,filter .2s}.primary:hover{filter:brightness(1.04);transform:translateY(-1px)}.secondary{border-radius:13px;background:#202b4d;border:1px solid #4a5a80;color:#eaf2ff;padding:12px 15px;font-weight:800}.actions{display:flex;gap:10px;flex-wrap:wrap}.actions>.primary{width:auto;flex:1}.mini-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.footer-note{margin:22px auto 0;text-align:center;max-width:720px;color:#8d9abc;font-size:11px}.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.how>div{border:1px solid var(--line);border-radius:18px;padding:17px;background:#141b34}.how .num{font-size:11px;color:var(--cyan);font-weight:900}.how strong{display:block;font-size:13px;margin:6px 0}.how p{margin:0;color:#a9b7d5;font-size:11px;line-height:1.7}.quiz-wrap{width:min(100%,660px);margin:35px auto 0}.quiz-meta{display:flex;justify-content:space-between;align-items:center;color:#b5c5e4;font-size:12px;font-weight:800;margin-bottom:12px}.progress{height:7px;background:#27314f;border-radius:10px;overflow:hidden;margin:0 0 35px}.progress span{display:block;height:100%;border-radius:10px;width:0%;background:linear-gradient(90deg,#86a1ff,#71e8de);transition:width .25s}.question-card{padding:clamp(20px,5vw,34px)}.q-label{font-size:11px;color:var(--cyan);letter-spacing:.16em;font-weight:900}.question-title{font-size:clamp(23px,5vw,33px);margin:10px 0 7px}.question-hint{color:#b8c5df;font-size:13px;margin-bottom:24px}.answers{display:grid;gap:10px}.answer{display:flex;align-items:center;text-align:left;gap:12px;width:100%;min-height:62px;padding:14px 15px;border:1px solid #455275;border-radius:13px;background:#1b2748;color:#fff;font-weight:750;line-height:1.55;transition:.17s}.answer:hover,.answer:focus-visible{background:#2a395c;border-color:var(--cyan);transform:translateY(-1px)}.letter{min-width:29px;height:29px;display:grid;place-items:center;border-radius:8px;color:#d0ecf7;background:#344465;font-size:12px;font-weight:950}.quiz-bottom{margin-top:15px;display:flex;justify-content:space-between;align-items:center}.text-link{color:#b7c9ef;font-size:13px;font-weight:800;padding:10px;background:transparent;border:0}.phase{margin:0 0 14px;font-size:12px;color:#8e9bc0}.loading{display:none}.results{max-width:830px;margin:31px auto}.result-kicker{color:#7ff0df;font-weight:900;letter-spacing:.14em;font-size:12px}.result-title{font-size:clamp(29px,6vw,48px);margin:11px 0 14px}.result-summary{color:#bfcae4;font-size:14px}.hero-result{position:relative;padding:26px;overflow:hidden;min-height:255px;margin:24px 0 12px;border-radius:25px;border:1px solid #6e88ac61;background:radial-gradient(circle at 78% 33%,rgba(125,232,208,.16),transparent 35%),linear-gradient(145deg,#283b62,#172542);box-shadow:var(--shadow)}.hero-result:after{position:absolute;right:-37px;bottom:-73px;content:"?";font-weight:1000;font-size:290px;line-height:1;font-family:Georgia,serif;color:#ffffff09;transform:rotate(-14deg);pointer-events:none}.predicted-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.13em;color:#112b30;background:var(--cyan);padding:7px 12px;border-radius:99px;font-weight:950}.fighter-name{position:relative;z-index:1;font-size:clamp(36px,8vw,63px);letter-spacing:-.055em;margin:17px 0 8px;line-height:1.2;font-weight:950;overflow-wrap:anywhere}.fighter-sub{color:#d0dbf0;font-weight:750;font-size:14px;position:relative;z-index:1}.f-strip{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;position:relative;z-index:1}.tag{font-size:11px;color:#dfeeff;background:#374e72;border:1px solid #7582a04f;padding:6px 9px;border-radius:40px;font-weight:750}.reason{margin:18px 0 0;color:#d5e0f5;font-size:13px;position:relative;z-index:1;max-width:610px}.result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.result-block{padding:22px}.result-block h3{margin:3px 0 9px}.result-block p{font-size:13px;color:#c2cde7;margin-bottom:0}.tiny{font-size:11px;color:#9cadce}.ranklist{display:grid;gap:8px}.rank-item{display:flex;align-items:center;gap:12px;min-height:51px;border-radius:12px;background:#1b2848;padding:12px;border:1px solid #405071}.rank-item strong{flex:1}.rank-index{font-size:11px;color:#9ac5d3;font-weight:900;min-width:32px}.tall-section{margin-top:12px}.personality{padding:25px}.type-headline{color:#86f1df;font-weight:800;font-size:11px;letter-spacing:.11em}.type-name{font-size:clamp(23px,4.5vw,31px);font-weight:900;margin:7px 0 10px}.personality>p{color:#cbd4e9;font-size:14px}.traitgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:18px}.trait{border:1px solid #425273;background:#1a2747;padding:12px;border-radius:12px}.trait span{display:block;font-size:10px;color:#9baed0}.trait b{font-size:13px}.compat{display:flex;flex-direction:column;gap:10px}.compat .lead{font-size:13px;font-weight:950;margin-bottom:8px}.compat .character{font-size:23px;line-height:1.35;margin:0 0 10px;letter-spacing:-.03em}.compat .info{font-size:12px;line-height:1.8;color:#c9d5ee}.compat.safe{background:linear-gradient(150deg,#233c46,#1a263d)}.compat.rough{background:linear-gradient(150deg,#392c42,#24213a)}.disclaimer{color:#9baace;font-size:11px;line-height:1.8;margin:16px 0}.accordion{margin:12px 0;border:1px solid var(--line);border-radius:18px;background:#151d36;overflow:hidden}.accordion summary{padding:16px 18px;cursor:pointer;color:#dce9ff;font-size:13px;font-weight:800}.accordion>div{padding:0 18px 16px}.meter{margin:12px 0}.meter-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px}.meter-track{height:8px;border-radius:999px;background:#2a3553;overflow:hidden}.meter-track span{height:100%;display:block;border-radius:999px;background:linear-gradient(90deg,#657edd,#75eddb)}.verify{padding:24px;margin-top:14px}.verify h3{margin-bottom:7px}.verify-intro{color:#bfcbe4;font-size:13px}.verify-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:17px}.verify-row label{display:block;color:#cbd7ed;font-size:12px;font-weight:750;margin-bottom:7px}.verify-row.wide{grid-column:1/-1}.verify button.primary{margin-top:15px}.feedback{border-top:1px solid var(--line);padding-top:19px;margin-top:20px}.feedback h3{font-size:23px}.feedback p{font-size:13px;color:#cbd7ed}.feedback .match{color:var(--cyan);font-weight:900}.bottom-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.bottom-cta button{flex:1;min-width:145px}.lowkey{font-size:11px;color:#94a4c6}.total-stats{display:flex;gap:12px;justify-content:center;margin:15px 0 5px}.total-stats span{background:#151d36;border:1px solid var(--line);border-radius:100px;padding:8px 12px;font-size:11px;color:#afc0de}.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;border-radius:999px;background:#eafff8;color:#0d2937;font-size:12px;font-weight:900;padding:10px 19px;box-shadow:0 16px 38px #0007;transition:.22s;z-index:9999;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.slide-icon{font-size:18px;margin-right:4px}.check-pill{display:inline-block;color:#bfeee2;background:#18433f;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:800}
+@media(max-width:740px){.hero{display:flex;flex-direction:column;align-items:stretch;padding:19px 0 12px;gap:18px}.hero h1{font-size:clamp(34px,9vw,49px)}.hero-art{height:148px}.hero-q{font-size:103px}.orb{width:157px;height:157px;border-width:11px}.hero-tag{font-size:10px}.tag1{bottom:12px}.tag2{top:24px}.setup{margin-top:10px;padding:19px}.pick{min-height:91px}.pick span{font-size:19px}.pick b{font-size:13px}.how{gap:7px}.how>div{padding:11px}.how strong{font-size:12px}.how p{font-size:10px}.top{padding-top:18px}.result-grid{grid-template-columns:1fr}.fighter-name{font-size:clamp(33px,9vw,52px)}.verify-grid{grid-template-columns:1fr}.verify-row.wide{grid-column:1}.quiz-wrap{margin-top:20px}}
+@media(max-width:380px){.shell{width:min(100% - 24px,890px)}.pick{padding:10px;min-height:100px}.pick b{font-size:12px}.pick small{font-size:10px}.mode-pick{padding:11px}.how{grid-template-columns:1fr;gap:7px}.how>div{display:flex;align-items:center;gap:8px}.how strong{margin:0}.how p{display:none}.traitgrid{grid-template-columns:1fr}.hero-art{height:125px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true">✦</span><span>SMASH MIND</span></div>
+    <div class="build">FRIEND TEST · v1.0 RC</div>
+  </header>
+  <main class="main">
+    <section id="home" class="view active" aria-label="スタート画面">
+      <div class="hero">
+        <div><div class="eyebrow">WHO'S YOUR MAIN?</div><h1>あなたの<br><span class="accent">持ちキャラ、</span><br>見抜きます。</h1><p class="subhead">いつもの性格、ちょっとした好み。<br>そこから<strong>スマブラで使っていそうなキャラ</strong>を推理する、友達と盛り上がる診断ゲーム。</p><div class="total-stats" style="justify-content:flex-start"><span>✦ 16の質問</span><span>✦ 3作品に対応</span><span>✦ 不正解でも面白い</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orb"></div><div class="hero-q">?</div><span class="spark s1">✧</span><span class="spark s2">✦</span><span class="spark s3">✳</span><span class="hero-tag tag1">WHO'S YOUR MAIN?</span><span class="hero-tag tag2">PERSONALITY × GAME</span></div>
+      </div>
+      <div class="panel setup" id="setup-panel">
+        <div class="section-top"><strong>診断をスタート</strong><span class="check-pill">所要 約3〜5分</span></div>
+        <p class="hint" style="margin-top:0">名前やアカウント登録は必要なし。直感で答えてね！</p>
+        <div class="step-label">01 ／ 遊んでいたスマブラを選んでね</div>
+        <div class="select-grid" id="edition-picks">
+          <button type="button" class="pick selected" data-edition="wii" aria-pressed="true"><span>🎮</span><div><b>Wii</b><small>スマブラX</small></div></button>
+          <button type="button" class="pick" data-edition="wiiu" aria-pressed="false"><span>🕹️</span><div><b>Wii U</b><small>スマブラ for</small></div></button>
+          <button type="button" class="pick" data-edition="switch" aria-pressed="false"><span>⚡</span><div><b>Switch</b><small>スマブラSP</small></div></button>
+        </div>
+        <div class="step-label">02 ／ どんな遊び方？</div>
+        <div class="two" id="mode-picks">
+          <button type="button" class="mode-pick selected" data-mode="self" aria-pressed="true"><b>✋ 自分を診断</b><small>自分の性格で答える</small></button>
+          <button type="button" class="mode-pick" data-mode="friend" aria-pressed="false"><b>👀 友達を推理</b><small>その人ならどう答える？</small></button>
+        </div>
+        <div class="step-label">03 ／ キャラをどれくらい知っていた？</div>
+        <div class="chips" id="knowledge-picks">
+          <button type="button" class="chip" data-knowledge="low" aria-pressed="false">ほとんど知らなかった</button>
+          <button type="button" class="chip selected" data-knowledge="mid" aria-pressed="true">有名どころは知っていた</button>
+          <button type="button" class="chip" data-knowledge="high" aria-pressed="false">かなり知っていた</button>
+          <button type="button" class="chip" data-knowledge="unknown" aria-pressed="false">覚えていない</button>
+        </div>
+        <p class="hint">最初に遊び始めた頃の印象でOK。ピック率には置き換えず、推理の補助に少しだけ使うよ。</p>
+        <div class="step-label">04 ／ 何を重視して遊んでいた？</div>
+        <div class="chips" id="focus-picks">
+          <button type="button" class="chip selected" data-focus="fun" aria-pressed="true">楽しさが大事</button>
+          <button type="button" class="chip" data-focus="both" aria-pressed="false">楽しさも勝ちも</button>
+          <button type="button" class="chip" data-focus="win" aria-pressed="false">勝ちたいタイプ</button>
+          <button type="button" class="chip" data-focus="unknown" aria-pressed="false">わからない</button>
+        </div>
+        <button class="primary" id="start" type="button" style="margin-top:25px">診断スタート <span aria-hidden="true">➜</span></button>
+      </div>
+      <div class="how"><div><span class="num">01 / FEEL</span><strong>直感で答える</strong><p>キャラ名を知らなくても、日常の質問だけで大丈夫。</p></div><div><span class="num">02 / GUESS</span><strong>キャラを予想</strong><p>持ちキャラ上位3人、性格タイプ、相性を発表。</p></div><div><span class="num">03 / REVEAL</span><strong>答え合わせ！</strong><p>外れた理由まで楽しめる。結果は友達と共有。</p></div></div>
+    </section>
+    <section id="quiz" class="view" aria-label="診断の質問">
+      <div class="quiz-wrap">
+        <div class="quiz-meta"><span id="quiz-edition"></span><span id="quiz-count">01 / 16</span></div>
+        <div class="progress" role="progressbar" aria-label="診断の進捗" aria-valuemin="0" aria-valuemax="16" aria-valuenow="0" id="quiz-progress"><span id="progress-fill"></span></div>
+        <div class="phase" id="quiz-phase">SECTION 01 / 好みの輪郭</div>
+        <div class="panel question-card">
+          <div class="q-label" id="q-label">QUESTION 01</div>
+          <h2 class="question-title" id="question"></h2>
+          <p class="question-hint" id="q-hint"></p>
+          <div class="answers" id="answers"></div>
+        </div>
+        <div class="quiz-bottom"><button type="button" class="text-link" id="back-q">← ひとつ前へ</button><span class="tiny">考えすぎず、最初の直感で。</span></div>
+      </div>
+    </section>
+    <section id="result" class="view results" aria-label="診断結果">
+      <div class="result-kicker">✦ MYSTERY SOLVED?</div>
+      <h2 class="result-title">診断結果、発表！</h2>
+      <p class="result-summary">16問の答えから、あなたらしいキャラクターの選び方を推理してみた。</p>
+      <div class="hero-result" id="hero-result"><div class="predicted-label">第1候補はこのファイター！</div><div class="fighter-name" id="predicted-name"></div><div class="fighter-sub" id="predicted-style"></div><div class="f-strip" id="predicted-tags"></div><p class="reason" id="predicted-reason"></p></div>
+      <div class="result-grid">
+        <div class="panel result-block"><div class="eyebrow">OTHER SUSPECTS</div><h3>ほかの候補</h3><div class="ranklist" id="top3"></div></div>
+        <div class="panel result-block"><div class="eyebrow">YOU ARE...</div><h3>あなたの性格タイプ</h3><div style="font-size:22px;font-weight:900;margin:10px 0" id="type-name-short"></div><p id="type-desc-short"></p></div>
+      </div>
+      <div class="panel personality tall-section"><div class="eyebrow">MIND PROFILE</div><div class="type-name" id="type-name"></div><p id="personality-desc"></p><div class="traitgrid" id="trait-tags"></div></div>
+      <div class="result-grid tall-section">
+        <div class="panel result-block compat safe"><div class="lead">💚 新しく試してみてほしいキャラ</div><div class="character" id="recommend-name"></div><div class="info" id="recommend-desc"></div></div>
+        <div class="panel result-block compat rough"><div class="lead">⚡ ちょっと相性が悪いかも？</div><div class="character" id="anti-name"></div><div class="info" id="anti-desc"></div></div>
+      </div>
+      <details class="accordion" id="why-details"><summary>🔎 なぜこの予想になった？ 診断の根拠を見る</summary><div id="why-content"></div></details>
+      <p class="disclaimer">※ 非公式ファン制作のエンタメ診断。性格とキャラ特性の関係は検証中の仮説であり、心理学的な判定・実測の的中確率ではありません。ピック率による人気補正はこの版では使用していません。</p>
+      <div class="panel verify" id="verify-card">
+        <div class="eyebrow">ANSWER REVEAL</div><h3>で、実際の持ちキャラは？</h3>
+        <p class="verify-intro">ここからがいちばん面白い。正解でも不正解でも、性格とのギャップを見てみよう！</p>
+        <div class="verify-grid">
+          <div class="verify-row wide"><label for="actual-fighter">実際に使っていたキャラ</label><select id="actual-fighter"><option value="">キャラを選んでね</option></select></div>
+          <div class="verify-row"><label for="start-reason">使い始めた理由（任意）</label><select id="start-reason"><option value="">選ばなくてもOK</option><option value="known">もともと知っていた</option><option value="look">見た目・雰囲気が好き</option><option value="easy">操作しやすかった</option><option value="moves">技や戦い方が面白そう</option><option value="win">勝ちやすかった</option><option value="friend">家族・友達の影響</option><option value="other">なんとなく／その他</option></select></div>
+          <div class="verify-row"><label for="keep-reason">使い続けた理由（任意）</label><select id="keep-reason"><option value="">選ばなくてもOK</option><option value="fun">技や戦い方が楽しい</option><option value="skill">使い込むほど面白い</option><option value="familiar">慣れていて安心</option><option value="love">キャラへの愛着</option><option value="win">勝てるから</option><option value="casual">あまり固定していない</option><option value="other">なんとなく／その他</option></select></div>
+        </div>
+        <button type="button" class="primary" id="check-answer">答え合わせする ✨</button>
+        <div id="feedback" class="feedback" hidden></div>
+      </div>
+      <div class="bottom-cta"><button type="button" class="secondary" id="share">📋 結果をコピー</button><button type="button" class="secondary" id="export">↓ テスト記録CSV</button><button type="button" class="primary" id="restart">↻ 次の人を診断</button></div>
+      <p class="footer-note">答え合わせの記録はこの端末内にのみ保存。運営や友達に自動送信されないよ。別の端末のデータを集めるには各端末でCSVを書き出してね。</p>
+    </section>
+  </main>
+  <footer class="footer-note" style="padding-bottom:22px;margin-top:6px">SMASH MIND · fan-made personality game · © Original quiz concept / Not affiliated with Nintendo.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+const DATA={"fighters":[{"name":"マリオ","look":"H","role":"BAL","stats":{"iconic":1,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":-1,"trick":0,"flexible":0,"stable":1,"show":0}},{"name":"ドンキーコング","look":"B","role":"HEAVY","stats":{"iconic":1,"recovery":0,"weight":1,"speed":-1,"power":1,"range":-1,"technical":-1,"trick":-1,"flexible":0,"stable":-1,"show":1}},{"name":"リンク","look":"H","role":"RANGE","stats":{"iconic":1,"recovery":0,"weight":1,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":1,"stable":1,"show":0}},{"name":"サムス","look":"R","role":"RANGE","stats":{"iconic":1,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":1,"stable":1,"show":0}},{"name":"ダークサムス","look":"S","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":1,"stable":1,"show":0}},{"name":"ヨッシー","look":"C","role":"MOBILITY","stats":{"iconic":1,"recovery":0,"weight":0,"speed":1,"power":0,"range":-1,"technical":-1,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"カービィ","look":"C","role":"BAL","stats":{"iconic":1,"recovery":1,"weight":-1,"speed":0,"power":0,"range":-1,"technical":-1,"trick":0,"flexible":0,"stable":0,"show":-1}},{"name":"フォックス","look":"S","role":"RUSH","stats":{"iconic":1,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"ピカチュウ","look":"C","role":"MOBILITY","stats":{"iconic":1,"recovery":1,"weight":0,"speed":1,"power":0,"range":-1,"technical":-1,"trick":0,"flexible":0,"stable":0,"show":1}},{"name":"ルイージ","look":"H","role":"TRICK","stats":{"iconic":1,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"ネス","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"キャプテン・ファルコン","look":"S","role":"RUSH","stats":{"iconic":1,"recovery":0,"weight":-1,"speed":1,"power":1,"range":-1,"technical":0,"trick":-1,"flexible":0,"stable":-1,"show":1}},{"name":"プリン","look":"C","role":"TRICK","stats":{"iconic":1,"recovery":1,"weight":-1,"speed":0,"power":-1,"range":-1,"technical":0,"trick":1,"flexible":-1,"stable":0,"show":-1}},{"name":"ピーチ","look":"H","role":"TECH","stats":{"iconic":1,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":1,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"デイジー","look":"H","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":1,"flexible":0,"stable":0,"show":1}},{"name":"クッパ","look":"B","role":"HEAVY","stats":{"iconic":1,"recovery":0,"weight":1,"speed":-1,"power":1,"range":-1,"technical":-1,"trick":-1,"flexible":-1,"stable":0,"show":1}},{"name":"アイスクライマー","look":"C","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":-1,"technical":1,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"シーク","look":"S","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":1,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"ゼルダ","look":"H","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":1,"stable":1,"show":-1}},{"name":"ドクターマリオ","look":"H","role":"BAL","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":1,"range":-1,"technical":-1,"trick":0,"flexible":-1,"stable":0,"show":-1}},{"name":"ピチュー","look":"C","role":"MOBILITY","stats":{"iconic":0,"recovery":1,"weight":-1,"speed":1,"power":0,"range":-1,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"ファルコ","look":"S","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":0,"trick":0,"flexible":0,"stable":0,"show":1}},{"name":"マルス","look":"S","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":1,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"ルキナ","look":"S","role":"BAL","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":0,"flexible":-1,"stable":1,"show":0}},{"name":"こどもリンク","look":"H","role":"RANGE","stats":{"iconic":0,"recovery":1,"weight":-1,"speed":1,"power":0,"range":1,"technical":0,"trick":0,"flexible":0,"stable":1,"show":0}},{"name":"ガノンドロフ","look":"B","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":1,"speed":-1,"power":1,"range":-1,"technical":-1,"trick":-1,"flexible":-1,"stable":-1,"show":1}},{"name":"ミュウツー","look":"S","role":"RANGE","stats":{"iconic":0,"recovery":1,"weight":-1,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"ロイ","look":"S","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":1,"range":-1,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"クロム","look":"H","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":1,"range":-1,"technical":0,"trick":-1,"flexible":-1,"stable":0,"show":0}},{"name":"Mr.ゲーム＆ウォッチ","look":"Q","role":"TRICK","stats":{"iconic":0,"recovery":1,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":1,"flexible":0,"stable":1,"show":0}},{"name":"メタナイト","look":"S","role":"RUSH","stats":{"iconic":0,"recovery":1,"weight":0,"speed":1,"power":0,"range":-1,"technical":1,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"ピット","look":"H","role":"BAL","stats":{"iconic":0,"recovery":1,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":0,"flexible":-1,"stable":1,"show":0}},{"name":"ブラックピット","look":"S","role":"BAL","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"ゼロスーツサムス","look":"S","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":1,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"ワリオ","look":"Q","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":1,"speed":0,"power":1,"range":-1,"technical":0,"trick":1,"flexible":0,"stable":-1,"show":1}},{"name":"スネーク","look":"R","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":0,"range":1,"technical":1,"trick":1,"flexible":0,"stable":1,"show":0}},{"name":"アイク","look":"H","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":1,"range":-1,"technical":0,"trick":-1,"flexible":-1,"stable":0,"show":0}},{"name":"ポケモントレーナー","look":"C","role":"SWITCH","stats":{"iconic":1,"recovery":1,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":1,"flexible":1,"stable":0,"show":0}},{"name":"ディディーコング","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":1,"power":0,"range":-1,"technical":1,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"リュカ","look":"C","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":1,"flexible":0,"stable":0,"show":-1}},{"name":"ソニック","look":"C","role":"RUSH","stats":{"iconic":1,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":0,"trick":-1,"flexible":-1,"stable":0,"show":1}},{"name":"デデデ","look":"C","role":"HEAVY","stats":{"iconic":0,"recovery":1,"weight":1,"speed":-1,"power":1,"range":0,"technical":-1,"trick":0,"flexible":0,"stable":-1,"show":1}},{"name":"ピクミン＆オリマー","look":"Q","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":0,"range":1,"technical":1,"trick":1,"flexible":0,"stable":1,"show":-1}},{"name":"ルカリオ","look":"S","role":"BAL","stats":{"iconic":0,"recovery":1,"weight":0,"speed":0,"power":0,"range":0,"technical":0,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"ロボット","look":"Q","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":1,"stable":1,"show":0}},{"name":"トゥーンリンク","look":"C","role":"RANGE","stats":{"iconic":0,"recovery":1,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":0,"stable":1,"show":0}},{"name":"ウルフ","look":"S","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":1,"range":0,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"むらびと","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":0,"range":1,"technical":0,"trick":1,"flexible":0,"stable":1,"show":-1}},{"name":"ロックマン","look":"Q","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":0,"range":1,"technical":1,"trick":0,"flexible":1,"stable":1,"show":0}},{"name":"Wii Fit トレーナー","look":"Q","role":"BAL","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":0,"range":0,"technical":0,"trick":0,"flexible":0,"stable":1,"show":0}},{"name":"ロゼッタ＆チコ","look":"H","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":1,"trick":1,"flexible":1,"stable":1,"show":-1}},{"name":"リトル・マック","look":"R","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":1,"range":-1,"technical":0,"trick":-1,"flexible":-1,"stable":-1,"show":0}},{"name":"ゲッコウガ","look":"S","role":"MOBILITY","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":1,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"Miiファイター 格闘","look":"H","role":"RUSH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"Miiファイター 剣術","look":"H","role":"BAL","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":0,"range":0,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"Miiファイター 射撃","look":"H","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":-1,"stable":1,"show":0}},{"name":"パルテナ","look":"H","role":"BAL","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":0,"flexible":0,"stable":1,"show":0}},{"name":"パックマン","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":1,"weight":0,"speed":0,"power":0,"range":1,"technical":1,"trick":1,"flexible":0,"stable":1,"show":0}},{"name":"ルフレ","look":"S","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":1,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"シュルク","look":"H","role":"SWITCH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":1,"trick":1,"flexible":1,"stable":0,"show":0}},{"name":"クッパ Jr.","look":"Q","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"ダックハント","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":1,"flexible":0,"stable":1,"show":-1}},{"name":"リュウ","look":"R","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":1,"range":-1,"technical":1,"trick":-1,"flexible":-1,"stable":0,"show":0}},{"name":"ケン","look":"R","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":1,"range":-1,"technical":1,"trick":-1,"flexible":-1,"stable":0,"show":1}},{"name":"クラウド","look":"S","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":1,"range":0,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"カムイ","look":"S","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":0,"technical":1,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"ベヨネッタ","look":"S","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":1,"trick":1,"flexible":1,"stable":0,"show":1}},{"name":"インクリング","look":"C","role":"MOBILITY","stats":{"iconic":0,"recovery":0,"weight":0,"speed":1,"power":0,"range":-1,"technical":0,"trick":1,"flexible":0,"stable":0,"show":1}},{"name":"リドリー","look":"B","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":1,"range":-1,"technical":0,"trick":0,"flexible":-1,"stable":-1,"show":1}},{"name":"シモン","look":"R","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":1,"range":1,"technical":0,"trick":0,"flexible":-1,"stable":1,"show":0}},{"name":"リヒター","look":"R","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":-1,"power":1,"range":1,"technical":0,"trick":0,"flexible":-1,"stable":1,"show":0}},{"name":"キングクルール","look":"B","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":1,"speed":-1,"power":1,"range":1,"technical":0,"trick":1,"flexible":0,"stable":-1,"show":1}},{"name":"しずえ","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":-1,"power":0,"range":1,"technical":0,"trick":0,"flexible":0,"stable":1,"show":-1}},{"name":"ガオガエン","look":"B","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":1,"speed":-1,"power":1,"range":-1,"technical":0,"trick":-1,"flexible":-1,"stable":-1,"show":1}},{"name":"パックンフラワー","look":"Q","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":1,"range":0,"technical":0,"trick":1,"flexible":0,"stable":0,"show":0}},{"name":"ジョーカー","look":"S","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":0,"range":-1,"technical":1,"trick":1,"flexible":0,"stable":0,"show":1}},{"name":"勇者","look":"H","role":"SWITCH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":1,"flexible":1,"stable":0,"show":1}},{"name":"バンジョー＆カズーイ","look":"C","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":0,"trick":1,"flexible":0,"stable":1,"show":0}},{"name":"テリー","look":"R","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":1,"power":1,"range":-1,"technical":1,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"ベレト／ベレス","look":"S","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":1,"range":1,"technical":1,"trick":0,"flexible":-1,"stable":0,"show":0}},{"name":"ミェンミェン","look":"S","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":-1,"power":1,"range":1,"technical":1,"trick":1,"flexible":-1,"stable":1,"show":0}},{"name":"スティーブ／アレックス","look":"Q","role":"TRICK","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":0,"range":1,"technical":1,"trick":1,"flexible":1,"stable":0,"show":0}},{"name":"セフィロス","look":"S","role":"RANGE","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":-1,"power":1,"range":1,"technical":0,"trick":0,"flexible":-1,"stable":0,"show":1}},{"name":"ホムラ／ヒカリ","look":"S","role":"SWITCH","stats":{"iconic":0,"recovery":0,"weight":0,"speed":0,"power":1,"range":0,"technical":0,"trick":1,"flexible":1,"stable":0,"show":1}},{"name":"カズヤ","look":"R","role":"TECH","stats":{"iconic":0,"recovery":0,"weight":-1,"speed":0,"power":1,"range":-1,"technical":1,"trick":-1,"flexible":-1,"stable":0,"show":1}},{"name":"ソラ","look":"H","role":"BAL","stats":{"iconic":0,"recovery":1,"weight":0,"speed":1,"power":0,"range":0,"technical":0,"trick":0,"flexible":0,"stable":0,"show":0}},{"name":"リザードン","look":"B","role":"HEAVY","stats":{"iconic":0,"recovery":0,"weight":1,"speed":-1,"power":1,"range":0,"technical":-1,"trick":-1,"flexible":0,"stable":0,"show":0}}],"rosters":{"wii":["マリオ","ルイージ","ピーチ","クッパ","ヨッシー","ドンキーコング","リンク","ゼルダ","シーク","ガノンドロフ","サムス","ゼロスーツサムス","カービィ","フォックス","ファルコ","ピカチュウ","プリン","キャプテン・ファルコン","ネス","アイスクライマー","マルス","Mr.ゲーム＆ウォッチ","ディディーコング","トゥーンリンク","メタナイト","デデデ","ウルフ","ポケモントレーナー","ルカリオ","リュカ","アイク","ピット","ワリオ","ピクミン＆オリマー","ロボット","スネーク","ソニック"],"wiiu":["マリオ","ルイージ","ピーチ","クッパ","ドクターマリオ","ヨッシー","ドンキーコング","ディディーコング","リンク","ゼルダ","シーク","ガノンドロフ","トゥーンリンク","サムス","ゼロスーツサムス","カービィ","メタナイト","デデデ","フォックス","ファルコ","ピカチュウ","プリン","ミュウツー","リザードン","ルカリオ","キャプテン・ファルコン","ネス","リュカ","マルス","ロイ","アイク","Mr.ゲーム＆ウォッチ","ピット","ワリオ","ピクミン＆オリマー","ロボット","ソニック","ロゼッタ＆チコ","クッパ Jr.","ゲッコウガ","ルフレ","ルキナ","カムイ","パルテナ","ブラックピット","むらびと","Wii Fit トレーナー","リトル・マック","シュルク","ダックハント","ロックマン","パックマン","リュウ","クラウド","ベヨネッタ","Miiファイター 格闘","Miiファイター 剣術","Miiファイター 射撃"],"switch":["マリオ","ドンキーコング","リンク","サムス","ダークサムス","ヨッシー","カービィ","フォックス","ピカチュウ","ルイージ","ネス","キャプテン・ファルコン","プリン","ピーチ","デイジー","クッパ","アイスクライマー","シーク","ゼルダ","ドクターマリオ","ピチュー","ファルコ","マルス","ルキナ","こどもリンク","ガノンドロフ","ミュウツー","ロイ","クロム","Mr.ゲーム＆ウォッチ","メタナイト","ピット","ブラックピット","ゼロスーツサムス","ワリオ","スネーク","アイク","ポケモントレーナー","ディディーコング","リュカ","ソニック","デデデ","ピクミン＆オリマー","ルカリオ","ロボット","トゥーンリンク","ウルフ","むらびと","ロックマン","Wii Fit トレーナー","ロゼッタ＆チコ","リトル・マック","ゲッコウガ","Miiファイター 格闘","Miiファイター 剣術","Miiファイター 射撃","パルテナ","パックマン","ルフレ","シュルク","クッパ Jr.","ダックハント","リュウ","ケン","クラウド","カムイ","ベヨネッタ","インクリング","リドリー","シモン","リヒター","キングクルール","しずえ","ガオガエン","パックンフラワー","ジョーカー","勇者","バンジョー＆カズーイ","テリー","ベレト／ベレス","ミェンミェン","スティーブ／アレックス","セフィロス","ホムラ／ヒカリ","カズヤ","ソラ"]},"dlc":{"wii":[],"wiiu":["ミュウツー","リュカ","ロイ","リュウ","クラウド","カムイ","ベヨネッタ"],"switch":["パックンフラワー","ジョーカー","勇者","バンジョー＆カズーイ","テリー","ベレト／ベレス","ミェンミェン","スティーブ／アレックス","セフィロス","ホムラ／ヒカリ","カズヤ","ソラ"]}};
+const VERSION="smash-mind-friends-v1.0-rc1";
+const STORAGE="smash-mind-friends-v1.0-test-records";
+const $=id=>document.getElementById(id);
+const looks={C:{label:"かわいい・親しみ",colour:"#ffa9cb",v:{cute:1.15,cool:-.55,real:-.7,odd:.08,minimal:.12,elegant:.15}},H:{label:"王道・親しみ",colour:"#ffd27a",v:{cute:.18,cool:.15,real:.05,odd:-.48,minimal:-.16,elegant:.16}},S:{label:"クール・洗練",colour:"#a7b0ff",v:{cute:-.62,cool:1.2,real:.12,odd:.08,minimal:.32,elegant:.45}},R:{label:"リアル・硬派",colour:"#b4d2e6",v:{cute:-.6,cool:.45,real:1.18,odd:-.4,minimal:.25,elegant:-.08}},Q:{label:"ユニーク・不思議",colour:"#89edc0",v:{cute:.08,cool:-.08,real:-.65,odd:1.2,minimal:.46,elegant:-.22}},B:{label:"迫力・ワイルド",colour:"#ffa57f",v:{cute:-.75,cool:.45,real:.5,odd:.24,minimal:-.45,elegant:-.45}}};
+const roleTags={BAL:"バランス派",HEAVY:"重量・パワー派",RANGE:"遠距離・制圧派",MOBILITY:"軽快な動き派",RUSH:"スピード勝負派",TRICK:"変化球・奇策派",TECH:"テクニック派",SWITCH:"切替・多彩派"};
+const boosts={
+"ピーチ":{v:{cute:1.3,elegant:1.7,real:-.45,odd:-.35,minimal:-.45},stats:{recovery:.95,technical:1.1,iconic:1}},
+"デイジー":{v:{cute:1.15,elegant:1.35,odd:-.23},stats:{iconic:.65}},
+"Mr.ゲーム＆ウォッチ":{v:{minimal:1.9,odd:1.65,cute:.23,real:-1.15,cool:.04},stats:{trick:1.35,technical:.55}},
+"カービィ":{v:{cute:1.65,minimal:.55,odd:.05,real:-1.2},stats:{recovery:1.55,weight:-1}},
+"ヨッシー":{v:{cute:1.5,minimal:.22,real:-1}},
+"プリン":{v:{cute:1.85,minimal:.7,real:-1.1},stats:{recovery:1.1,weight:-1}},
+"ピカチュウ":{v:{cute:1.55,minimal:.3},stats:{recovery:.8}},
+"リュカ":{v:{cute:1.2,odd:.28,minimal:-.18}},
+"ネス":{v:{cute:1.1,odd:.45}},
+"ロボット":{v:{minimal:1.0,odd:.9,cute:-.05}},
+"パックマン":{v:{minimal:.9,odd:1.1,cute:.45}},
+"ピクミン＆オリマー":{v:{minimal:.8,odd:1.45,cute:.6}},
+"パックンフラワー":{v:{odd:1.8,cute:.15}},
+"ロゼッタ＆チコ":{v:{elegant:1.6,cute:.8,minimal:-.55}},
+"ゼルダ":{v:{elegant:1.5,cute:.45}},
+"パルテナ":{v:{elegant:1.5,cool:.65}},
+"ベヨネッタ":{v:{elegant:1.4,cool:1.6}},
+"ルキナ":{v:{elegant:.85,cool:1.2}},
+"マルス":{v:{elegant:.9,cool:1.05}},
+"ガノンドロフ":{v:{real:1.1,cool:.9}},
+"クッパ":{v:{real:.7,odd:.1}},
+"マリオ":{v:{cute:.5,minimal:.22,odd:-.5},stats:{iconic:1}},
+"ルイージ":{v:{cute:.55,minimal:.25,odd:.45},stats:{iconic:.8}},
+"ディディーコング":{v:{cute:1.0,odd:.15}},
+"ポケモントレーナー":{v:{cute:.6,odd:-.25},stats:{flexible:1.25,technical:.65,recovery:.15}},
+"シュルク":{stats:{flexible:1.2}},
+"ソニック":{v:{cute:.38,cool:.5},stats:{speed:1.2}},
+"スネーク":{v:{real:1.6,cute:-1.2}},
+"しずえ":{v:{cute:1.65,odd:.12}},
+"むらびと":{v:{cute:1.0,minimal:.47,odd:.37}},
+"ダックハント":{v:{cute:1.28,odd:1.05}},
+"ロックマン":{v:{minimal:.5,odd:.55,cool:.4}},
+"トゥーンリンク":{v:{cute:1.0,minimal:.25,real:-.45}},
+"クッパ Jr.":{v:{cute:.8,odd:1.1}},
+"アイスクライマー":{v:{cute:1.25,minimal:.5}},
+"デデデ":{v:{cute:1.0,odd:.28}}
+};
+const roleVector={BAL:{stable:.5,flexible:.45},HEAVY:{power:1,weight:1,speed:-.8},RANGE:{range:1.2,stable:.35},MOBILITY:{speed:1.1,recovery:.4},RUSH:{speed:1.1,show:.35},TRICK:{trick:1.25,flexible:.55},TECH:{technical:1.2,stable:.2},SWITCH:{flexible:1.3,technical:.5}};
+const vKeys=["cute","minimal","odd","elegant","cool","real"];
+const pKeys=["speed","power","range","technical","trick","flexible","stable","show","recovery","weight"];
+const psiKeys=["novelty","calm","craft","social","improv","loyal","courage"];
+const featNames={cute:"親しみやすい雰囲気",minimal:"飾らないシンプルさ",odd:"独特な世界観",elegant:"上品で華やかな印象",cool:"クールな雰囲気",real:"リアルな存在感",speed:"テンポのよさ",power:"一発の迫力",range:"距離を置いた工夫",technical:"使い込む奥深さ",trick:"意外性のある展開",flexible:"選択肢の多さ",stable:"落ち着いた進め方",show:"人を驚かせる楽しさ",recovery:"立て直しやすさ",weight:"どっしりした安定感"};
+function add(base,extra){for(const [k,v] of Object.entries(extra||{}))base[k]=(base[k]||0)+v;return base}
+const fighters=DATA.fighters.map(f=>{const extra=boosts[f.name]||{};const v={...looks[f.look].v,...extra.v};const p={...f.stats};for(const k of Object.keys(roleVector[f.role]||{}))p[k]=(p[k]||0)+(roleVector[f.role][k]||0)*.28;Object.assign(p,extra.stats||{});return{...f,v,p}});
+const rosterSet={};for(const [ed,arr] of Object.entries(DATA.rosters))rosterSet[ed]=new Set(arr);
+const byName=new Map(fighters.map(f=>[f.name,f]));
+const editionLabel={wii:"Wii / スマブラX",wiiu:"Wii U / スマブラ for",switch:"Switch / スマブラSP"};
+// 公開テスト v1.0: 16問固定。問いの変更は公開後の比較を壊すので、この版ではしない。
+// v / p / mind はあくまで仮説上の特徴量。日常行動を特定の必殺技に直結させない。
+const Q=[
+ {id:"q01",title:"部屋に絵を1枚飾るなら、どれに惹かれる？",area:"見た目の好み",opts:[
+  ["白黒のすっきりした線画",{minimal:1.4},{},{calm:.2}],
+  ["明るい色のかわいいイラスト",{cute:1.5},{},{social:.2}],
+  ["写真のようにリアルな風景",{real:1.5},{},{calm:.15}],
+  ["見たことのない不思議な絵",{odd:1.45},{},{novelty:.45}]]},
+ {id:"q02",title:"普段使う小物で、好きなデザインは？",area:"デザインの感性",opts:[
+  ["丸みのある、親しみやすい形",{cute:1.15},{},{social:.1}],
+  ["飾りの少ないシンプルな形",{minimal:1.5},{},{calm:.35}],
+  ["上品で華やかなデザイン",{elegant:1.5},{},{social:.1}],
+  ["シャープでかっこいいデザイン",{cool:1.5},{},{courage:.2}]]},
+ {id:"q03",title:"動物の写真を4枚並べたら、最初に見たいのは？",area:"直感的な魅力",opts:[
+  ["人懐っこそうな子犬",{cute:1.0},{},{social:.4}],
+  ["凛々しく立つオオカミ",{cool:1,real:.15},{},{courage:.35}],
+  ["のんびりしているカピバラ",{cute:.25,minimal:.15},{},{calm:.75}],
+  ["色鮮やかなカメレオン",{odd:1.05},{},{novelty:.75}]]},
+ {id:"q04",title:"初めて入ったレストランで、何を頼む？",area:"選び方のクセ",opts:[
+  ["お店の人気No.1",{},{},{loyal:.5,calm:.25}],
+  ["写真を見て、直感で決める",{},{},{improv:.6}],
+  ["今まで食べたことのない料理",{},{},{novelty:.8,courage:.3}],
+  ["店員さんのおすすめ",{},{},{social:.5,improv:.25}]]},
+ {id:"q05",title:"知らない音楽を探すとき、まず何をする？",area:"親しみと発見",opts:[
+  ["好きなアーティストの関連曲を聴く",{},{},{loyal:.65,calm:.2}],
+  ["ランキングや定番から探す",{},{},{loyal:.35,social:.15}],
+  ["友達からおすすめを聞く",{},{},{social:.7}],
+  ["知らないジャンルを自分で掘る",{},{},{novelty:.8,craft:.25}]]},
+ {id:"q06",title:"新しい道具を買うなら、まず何が気になる？",area:"選択のきっかけ",opts:[
+  ["見た目が気に入るか",{},{},{novelty:.2}],
+  ["説明なしで使いやすいか",{},{technical:-.4,stable:.25},{calm:.35}],
+  ["使いこなすほど便利になるか",{},{technical:.45},{craft:.75}],
+  ["前から知っている安心感があるか",{},{},{loyal:.75,calm:.3}]]},
+ {id:"q07",title:"初めての遊びに誘われたら、どう始めたい？",area:"新しいことへの姿勢",opts:[
+  ["短く説明を聞いて、すぐ試す",{},{speed:.35},{improv:.85,courage:.25}],
+  ["ルールを理解してから始める",{},{technical:.3,stable:.3},{craft:.6,calm:.35}],
+  ["得意な人のやり方を見て覚える",{},{stable:.3},{social:.4,calm:.45}],
+  ["まず自分だけの楽しみ方を考える",{},{trick:.32},{novelty:.45,improv:.5}]]},
+ {id:"q08",title:"趣味で難しいことにぶつかったら？",area:"工夫の仕方",opts:[
+  ["練習して、できるようにする",{},{technical:.65,stable:.28},{craft:.9}],
+  ["自分なりの別の方法を試す",{},{trick:.4,flexible:.35},{improv:.6,craft:.5}],
+  ["もっと気軽な楽しみ方に変える",{},{technical:-.4,stable:.25},{calm:.4}],
+  ["誰かにコツを教えてもらう",{},{technical:.25},{social:.5,craft:.3}]]},
+ {id:"q09",title:"友達とボードゲーム中、一番うれしいのは？",area:"遊びの楽しみ方",opts:[
+  ["みんなで大笑いできた瞬間",{},{show:.45},{social:.85}],
+  ["工夫した作戦が決まった瞬間",{},{technical:.65,stable:.2},{craft:.8}],
+  ["最後に大逆転できた瞬間",{},{power:.35,show:.4},{courage:.7}],
+  ["初めての展開や発見があった瞬間",{},{trick:.38},{novelty:.8}]]},
+ {id:"q10",title:"友達との勝負ごとで、大切にしたいのは？",area:"勝負への価値観",opts:[
+  ["結果として勝てたか",{},{stable:.35,technical:.2},{courage:.5,craft:.2}],
+  ["昨日より上手くなれたか",{},{technical:.5},{craft:.9}],
+  ["その時間を楽しめたか",{},{show:.25},{social:.75,calm:.25}],
+  ["思い切って挑戦できたか",{},{trick:.3,show:.3},{courage:.7,improv:.3}]]},
+ {id:"q11",title:"仲間と何かを企画するとき、自然にするのは？",area:"いつもの役割",opts:[
+  ["まずアイデアを出す",{},{trick:.2},{improv:.7,courage:.2}],
+  ["みんなの希望を聞いてまとめる",{},{stable:.2},{social:.95}],
+  ["スケジュールや準備を整える",{},{stable:.5},{calm:.6,craft:.5}],
+  ["思い切った新しい案を出す",{},{trick:.35},{novelty:.7,courage:.5}]]},
+ {id:"q12",title:"旅行先で急に自由時間ができたら？",area:"予定外の楽しみ",opts:[
+  ["調べてから行き先を決める",{},{stable:.4},{calm:.6,craft:.3}],
+  ["思いついた場所へ行ってみる",{},{speed:.3},{improv:.8,courage:.35}],
+  ["居心地のいい場所でのんびり",{},{stable:.3},{calm:.9}],
+  ["友達のおすすめに乗ってみる",{},{flexible:.25},{social:.6,improv:.2}]]},
+ {id:"q13",title:"長く愛用しているものを使い続ける理由は？",area:"愛着の持ち方",opts:[
+  ["使い慣れていて安心する",{},{stable:.28},{loyal:.85,calm:.35}],
+  ["見た目や思い出に愛着がある",{},{},{loyal:.8,social:.2}],
+  ["性能や使い勝手が自分に合う",{},{technical:.2},{craft:.35,calm:.35}],
+  ["使いこなすほど新しい面白さがある",{},{technical:.6},{craft:.65,novelty:.3}]]},
+ {id:"q14",title:"気に入ったものを新しいものに替えるのはどんなとき？",area:"変化への向き合い方",opts:[
+  ["今より便利だとわかったとき",{},{technical:.25},{craft:.4,calm:.25}],
+  ["新しい見た目に一目ぼれしたとき",{},{},{novelty:.65}],
+  ["違うものを試したくなったとき",{},{flexible:.3},{novelty:.75,improv:.25}],
+  ["人に勧められて気になったとき",{},{},{social:.5,improv:.25}]]},
+ {id:"q15",title:"友達との外出予定が急になくなったら？",area:"トラブルへの反応",opts:[
+  ["すぐ別の面白い予定を考える",{},{flexible:.35},{improv:.8,novelty:.25}],
+  ["せっかくだからゆっくり休む",{},{stable:.4},{calm:.8}],
+  ["この機会に珍しいことを試す",{},{trick:.25},{novelty:.85,courage:.3}],
+  ["次回の計画をちゃんと立てる",{},{technical:.2,stable:.35},{craft:.5,loyal:.3}]]},
+ {id:"q16",title:"友達から言われてうれしい褒め言葉は？",area:"自分らしさ",opts:[
+  ["『親しみやすくて、安心する』",{cute:.2},{stable:.15},{social:.6,calm:.35}],
+  ["『自分だけの世界観を持っている』",{odd:.3},{trick:.12},{novelty:.65}],
+  ["『落ち着いていて、頼もしい』",{},{stable:.35},{calm:.8,loyal:.25}],
+  ["『何でも楽しめる冒険家だね』",{},{flexible:.25},{courage:.7,improv:.55}]]}
+];
+const NEUTRAL=(()=>{const v={},p={};for(const q of Q){for(const opt of q.opts){for(const [k,n] of Object.entries(opt[1]))v[k]=(v[k]||0)+n/4;for(const [k,n] of Object.entries(opt[2]))p[k]=(p[k]||0)+n/4;}}return{v,p}})();
+const state={page:"home",edition:"wii",mode:"self",knowledge:"mid",focus:"fun",answers:[],at:0,result:null,actual:"",initialReason:"",keepReason:"",recordSaved:false};
+let toastTimer=null;
+function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2400)}
+function show(name){state.page=name;for(const el of document.querySelectorAll(".view"))el.classList.toggle("active",el.id===name);window.scrollTo({top:0,behavior:"instant"})}
+function chooseGroup(selector,key,value){state[key]=value;document.querySelectorAll(selector).forEach(el=>{const yes=el.dataset[key]===value;el.classList.toggle("selected",yes);el.setAttribute("aria-pressed",String(yes))});}
+for(const btn of document.querySelectorAll("[data-edition]"))btn.addEventListener("click",()=>chooseGroup("[data-edition]","edition",btn.dataset.edition));
+for(const btn of document.querySelectorAll("[data-mode]"))btn.addEventListener("click",()=>chooseGroup("[data-mode]","mode",btn.dataset.mode));
+for(const btn of document.querySelectorAll("[data-knowledge]"))btn.addEventListener("click",()=>chooseGroup("[data-knowledge]","knowledge",btn.dataset.knowledge));
+for(const btn of document.querySelectorAll("[data-focus]"))btn.addEventListener("click",()=>chooseGroup("[data-focus]","focus",btn.dataset.focus));
+function pool(){return fighters.filter(f=>rosterSet[state.edition].has(f.name))}
+function start(){state.answers=[];state.at=0;state.result=null;state.actual="";state.initialReason="";state.keepReason="";state.recordSaved=false;show("quiz");renderQuestion()}
+$("start").addEventListener("click",start);
+function renderQuestion(){if(state.at>=Q.length){finish();return}const q=Q[state.at];$("quiz-edition").textContent=editionLabel[state.edition]+' · '+(state.mode==="friend"?"友達を推理":"自分を診断");$("quiz-count").textContent=String(state.at+1).padStart(2,"0")+" / "+Q.length;$("quiz-progress").setAttribute("aria-valuenow",String(state.at));$("progress-fill").style.width=(100*state.at/Q.length)+"%";$("quiz-phase").textContent=state.at<3?"SECTION 01 / 見た目と感性":state.at<6?"SECTION 02 / 何を選ぶ？":state.at<10?"SECTION 03 / 遊び方":state.at<14?"SECTION 04 / 考え方と愛着":"SECTION 05 / あなたらしさ";$("q-label").textContent="QUESTION "+String(state.at+1).padStart(2,"0")+" · "+q.area;$("question").textContent=q.title;$("q-hint").textContent=state.mode==="friend"?"その友達ならどう答えるか、印象で選んでね。":"正解はないよ。いちばん近いものを選んでね。";const wrap=$("answers");wrap.replaceChildren();q.opts.forEach((opt,i)=>{const b=document.createElement("button");b.type="button";b.className="answer";const letter=document.createElement("span");letter.className="letter";letter.textContent="ABCD"[i];const txt=document.createElement("span");txt.textContent=opt[0];b.append(letter,txt);b.addEventListener("click",()=>answer(i));wrap.append(b)});$("back-q").disabled=state.at===0;window.scrollTo({top:0,behavior:"instant"})}
+function answer(i){state.answers[state.at]=i;state.at++;if(state.at>=Q.length){finish()}else renderQuestion()}
+$("back-q").addEventListener("click",()=>{if(state.at>0){state.at--;renderQuestion()}});
+// 音量のような偽の確率は出さない。現在のスコアは実測の正答確率ではない。
+function scores(){const v={},p={},mind={};for(const key of vKeys)v[key]=0;for(const key of pKeys)p[key]=0;for(const key of psiKeys)mind[key]=0;for(let j=0;j<Q.length;j++){const opt=Q[j].opts[state.answers[j]];if(!opt)continue;add(v,opt[1]);add(p,opt[2]);add(mind,opt[3])}
+ // 普段の行動から戦闘性能まで一足飛びに推定せず、"遊び方"への反映は弱める。
+ // 人間観察で得られた好み・感性を主に用いる。
+ if(state.focus==="win"){p.technical+=.15;p.stable+=.1}else if(state.focus==="fun"){p.show+=.15}
+ return {v,p,mind,fitV:Object.fromEntries(vKeys.map(k=>[k,(v[k]||0)-(NEUTRAL.v[k]||0)])),fitP:Object.fromEntries(pKeys.map(k=>[k,(p[k]||0)-(NEUTRAL.p[k]||0)]))}}
+function vecFit(user,character,keys){let dot=0,un=0,cn=0;for(const k of keys){const u=user[k]||0;const f=character[k]||0;dot+=u*f;un+=u*u;cn+=f*f}return un>0&&cn>0?dot/(Math.sqrt(un)*Math.sqrt(cn)):0}
+function model(){const user=scores();const rows=pool().map(f=>{const vf=vecFit(user.fitV,f.v,vKeys),pf=vecFit(user.fitP,f.p,pKeys); // 未検証の人気率による固定加点は行わない
+ const selectScore=.64*vf+.36*pf+((state.knowledge==="low")?0.05:(state.knowledge==="mid"?0.025:0))*(f.p.iconic||0);
+ const recommendScore=.43*vf+.57*pf;
+ return {f,vf,pf,selectScore,recommendScore}});
+ const rank=[...rows].sort((a,b)=>b.selectScore-a.selectScore||a.f.name.localeCompare(b.f.name,"ja"));
+ const recommendations=[...rows].filter(r=>r.f.name!==rank[0].f.name).sort((a,b)=>b.recommendScore-a.recommendScore);
+ // 逆相性は人気や知名度の低さでなく、遊び方の特徴が食い違う候補から。
+ const worst=[...rows].filter(r=>!rank.slice(0,3).some(q=>q.f.name===r.f.name) && r.f.name!==(recommendations[0]?.f.name)).sort((a,b)=>a.pf-b.pf||a.f.name.localeCompare(b.f.name,"ja"));
+ return {user,rank,recommend:recommendations[0],anti:worst[0]||rows.at(-1)};
+}
+function topMatchContributors(user,f,cat){const keys=cat==="v"?vKeys:pKeys,us=cat==="v"?user.fitV:user.fitP,features=cat==="v"?f.v:f.p;return keys.map(key=>({key,n:(us[key]||0)*(features[key]||0)})).filter(o=>o.n>.1).sort((a,b)=>b.n-a.n)}
+function topDisagreeContributors(user,f){return pKeys.map(key=>({key,n:(user.fitP[key]||0)*(f.p[key]||0)})).filter(o=>o.n<-.08).sort((a,b)=>a.n-b.n)}
+function psiAverage(user){const ans=user.mind;return {novelty:ans.novelty||0,calm:ans.calm||0,craft:ans.craft||0,social:ans.social||0,improv:ans.improv||0,loyal:ans.loyal||0,courage:ans.courage||0}}
+function personality(user){const v=user.v,m=psiAverage(user);let label,short,desc;
+ if(m.novelty+m.improv>=m.calm+m.loyal+1){label="好奇心で道を拓く、自由な探検家";short="自由な探検家";desc="思いついたことを試して、自分なりの面白さを見つけるタイプ。変化を楽しむ一方、気に入ったものには意外な愛着もあるかも。"}
+ else if(m.craft>=m.improv+.65){label="工夫が大好きな、こだわり研究家";short="こだわり研究家";desc="小さな工夫を積み重ねて、自分流の正解を作っていくタイプ。派手な勝ち負けだけでなく、納得できる過程も楽しめそう。"}
+ else if(m.social>=m.craft+.7){label="みんなを楽しませる、共感型エンターテイナー";short="共感エンターテイナー";desc="自分が楽しいだけでなく、一緒にいる人の楽しさにも敏感。盛り上がる瞬間と、気の合う仲間を大切にするタイプ。"}
+ else if(m.calm+m.loyal>=m.novelty+m.improv+1){label="自分のペースを守る、安定の名プレイヤー";short="安定の名プレイヤー";desc="慣れ親しんだ楽しさを大事にしつつ、必要な場面ではきちんと工夫できるタイプ。気楽そうに見えて、意外と芯が強い。"}
+ else {label="楽しさと工夫を両立する、バランス探究家";short="バランス探究家";desc="楽しむこと、上手くなること、自分らしく選ぶこと。その時の状況に合わせて重心を動かせるタイプ。"}
+ if(v.odd>=1.3)desc+=" 周りと違うものに自然と惹かれる、独特の美意識も持っていそう。";
+ else if(v.minimal>=1.4)desc+=" すっきりした美しさを好む、飾らないこだわりもポイント。";
+ else if(v.cute>=2)desc+=" 親しみやすさや愛嬌に弱い一面もありそう。";
+ const axes=[
+ {title:"新しいものへの好奇心",val:m.novelty+m.improv*.45,bad:"落ち着いた好み",good:"発見が好き"},
+ {title:"じっくり工夫する気持ち",val:m.craft,bad:"直感派",good:"探究派"},
+ {title:"人と楽しむ気持ち",val:m.social,bad:"マイペース",good:"みんなで楽しむ"},
+ {title:"安心と馴染みを大切に",val:m.calm+m.loyal*.4,bad:"変化を楽しむ",good:"居心地重視"}
+ ];return {label,short,desc,axes}}
+function tagFor(f){const best=Object.entries(f.v).sort((a,b)=>b[1]-a[1]).slice(0,2).map(([k])=>featNames[k]);return [looks[f.look].label,roleTags[f.role],...best].filter(Boolean)}
+function explanation(result){const {user,rank}=result;const f=rank[0].f;const v=topMatchContributors(user,f,"v"),p=topMatchContributors(user,f,"p");const arr=[...v.slice(0,2),...p.slice(0,1)].map(x=>featNames[x.key]);const unique=[...new Set(arr)].slice(0,3);return unique.length?"回答に見えた「"+unique.join("」「")+"」が、"+f.name+"の初期イメージと重なったよ。":"全体の回答から、"+f.name+"の雰囲気が近いと予想したよ。"}
+function antiExplanation(result){const {user,anti}=result;const c=topDisagreeContributors(user,anti.f);const trait=c[0]?.key;if(trait){const names={technical:"練習や研究の深さ",trick:"意外性ある展開",speed:"素早いテンポ",power:"一撃の豪快さ",range:"距離を使った駆け引き",flexible:"戦い方の切替",stable:"安定した進め方",show:"魅せるプレイ",weight:"重さを生かす戦い",recovery:"立て直しのしやすさ"};return "回答の好みと、"+anti.f.name+"に設定した「"+(names[trait]||featNames[trait])+"」の特徴にギャップが。使い始めは少し戸惑うかも？"}
+ return "あなたの遊び方の傾向と、"+anti.f.name+"の戦闘スタイルは少し違う方向。逆に試してみると新しい発見があるかも。"}
+function recoExplanation(result){const r=result.recommend,user=result.user,f=r.f;const all=[...topMatchContributors(user,f,"p"),...topMatchContributors(user,f,"v")].sort((a,b)=>b.n-a.n);const key=all[0]?.key;return (key?"「"+featNames[key]+"」が合いそう。":"いつもと少し違う持ち味を楽しめそう。")+" 持ちキャラの予想とは別に、相性のよさから選んだ候補だよ。"}
+function fillSelect(){const select=$("actual-fighter");select.replaceChildren(new Option("キャラを選んでね",""));for(const f of pool().sort((a,b)=>a.name.localeCompare(b.name,"ja")))select.append(new Option(f.name,f.name))}
+function finish(){state.result=model();state.at=Q.length;const result=state.result,p=result.rank[0].f;
+ $("predicted-name").textContent=p.name;
+ $("predicted-style").textContent=roleTags[p.role]+" ／ "+editionLabel[state.edition];
+ $("predicted-reason").textContent=explanation(result);
+ $("hero-result").style.background="radial-gradient(circle at 78% 36%,"+looks[p.look].colour+"30,transparent 39%),linear-gradient(145deg,#283b62,#172542)";
+ $("predicted-tags").replaceChildren(...tagFor(p).slice(0,3).map(t=>{const e=document.createElement("span");e.className="tag";e.textContent=t;return e}));
+ const top3=$("top3");top3.replaceChildren();result.rank.slice(1,3).forEach((r,i)=>{const el=document.createElement("div");el.className="rank-item";const num=document.createElement("span");num.className="rank-index";num.textContent="#"+(i+2);const name=document.createElement("strong");name.textContent=r.f.name;el.append(num,name);top3.append(el)});
+ const mind=personality(result.user);$("type-name").textContent=mind.label;$("type-name-short").textContent=mind.short;$("type-desc-short").textContent=mind.desc.split("。")[0]+"。";$("personality-desc").textContent=mind.desc;
+ $("trait-tags").replaceChildren(...mind.axes.map(a=>{const el=document.createElement("div");el.className="trait";const title=document.createElement("span");title.textContent=a.title;const val=document.createElement("b");val.textContent=a.val>1.25?a.good:(a.val<.35?a.bad:"バランス型");el.append(title,val);return el}));
+ $("recommend-name").textContent=result.recommend.f.name;$("recommend-desc").textContent=recoExplanation(result);$("anti-name").textContent=result.anti.f.name;$("anti-desc").textContent=antiExplanation(result);
+ renderWhy(result);
+ fillSelect();$("start-reason").value="";$("keep-reason").value="";$("feedback").replaceChildren();$("feedback").hidden=true;$("check-answer").disabled=false;$("check-answer").textContent="答え合わせする ✨";
+ show("result")}
+function renderWhy(result){const root=$("why-content");root.replaceChildren();const desc=document.createElement("p");desc.className="tiny";desc.textContent="直感で選んだ回答から、次の特徴が見えたよ。目安の強弱を示すもので、実際の性格検査の得点ではないよ。";root.append(desc);const vals=[
+ ["かわいい・親しみ",result.user.v.cute||0],
+ ["シンプルな美意識",result.user.v.minimal||0],
+ ["個性的なものへの好み",result.user.v.odd||0],
+ ["華やか・上品な雰囲気",result.user.v.elegant||0],
+ ["クール・リアルな好み",(result.user.v.cool||0)+(result.user.v.real||0)*.45],
+ ["工夫して楽しむ",result.user.mind.craft||0],
+ ["発見と変化を楽しむ",result.user.mind.novelty||0]
+ ];for(const [label,value] of vals){const r=document.createElement("div");r.className="meter";const head=document.createElement("div");head.className="meter-head";const n=document.createElement("span");n.textContent=label;const t=document.createElement("span");t.textContent=value>=1.3?"よく表れている":value>=.6?"少し表れている":"今回の回答では控えめ";head.append(n,t);const track=document.createElement("div");track.className="meter-track";const bar=document.createElement("span");bar.style.width=Math.min(94,Math.max(8,Math.round(value/2.2*100)))+"%";track.append(bar);r.append(head,track);root.append(r)}const note=document.createElement("p");note.className="tiny";note.textContent="結果は固定の16問と初期キャラ分類から計算。公開テスト中にこっそり学習して順位が変わることはないよ。";root.append(note)}
+const startReasons={known:"もともと知っていた",look:"見た目・雰囲気が好き",easy:"操作しやすかった",moves:"技や戦い方が面白そう",win:"勝ちやすかった",friend:"家族・友達の影響",other:"なんとなく／その他"};
+const keepReasons={fun:"技や戦い方が楽しい",skill:"使い込むほど面白い",familiar:"慣れていて安心",love:"キャラへの愛着",win:"勝てるから",casual:"あまり固定していない",other:"なんとなく／その他"};
+function create(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el}
+function checkAnswer(){const actual=$("actual-fighter").value;if(!actual){toast("実際の持ちキャラを選んでね");$("actual-fighter").focus();return}state.actual=actual;state.initialReason=$("start-reason").value;state.keepReason=$("keep-reason").value;const {rank,user}=state.result;const pred=rank[0].f.name;const rankNum=rank.findIndex(x=>x.f.name===actual)+1;const box=$("feedback");box.replaceChildren();const head=rankNum===1?"🎉 大正解！":rankNum<=3?"✨ 惜しい！ TOP3には入っていた！":"😳 外れた！ だからこそ面白い。";box.append(create("h3",head));box.append(create("p","予想「"+pred+"」 ／ 実際「"+actual+"」"));box.append(create("p","実際の持ちキャラは、"+rank.length+"候補のうち " + rankNum +"位に入っていたよ。", "match"));
+ const real=byName.get(actual);if(rankNum!==1){const pv=topMatchContributors(user,real,"v").slice(0,2).map(x=>featNames[x.key]);let message="";
+ if(state.initialReason==="known")message="知っているキャラだったから選んだんだね！ 性格が似ているかとは別に、出会い方が持ちキャラを決めることもある。";
+ else if(state.initialReason==="look")message="見た目から選んだんだね。好みの中には、質問だけでは拾い切れなかった魅力がありそう。";
+ else if(state.initialReason==="friend")message="家族や友達の影響は性格だけでは読みにくいもの。そういうエピソードも持ちキャラらしさだね。";
+ else if(state.initialReason==="easy")message="実際に操作して感じる使いやすさは、日常の質問だけではわからない部分だね。";
+ else message="いつもの好みから予想したキャラと、実際に好きになったキャラにはギャップがあるみたい。";
+ box.append(create("p",message));if(pv.length)box.append(create("p","ちなみに「"+actual+"」にも、今回の回答に近い「"+pv.join("」「")+"」の要素は見つかったよ。"));
+ }else{box.append(create("p","答え合わせ成功！ 好みと実際のキャラの選択が、今回の仮説では近かったみたい。"))}
+ if(state.keepReason){box.append(create("p","使い続けた理由は「"+keepReasons[state.keepReason]+"」。最初の選択理由とは別の魅力がありそう。"))}
+ box.hidden=false;$("check-answer").disabled=true;$("check-answer").textContent="答え合わせ済み ✓";
+ if(!state.recordSaved){saveRecord(rankNum);state.recordSaved=true}box.scrollIntoView({behavior:"smooth",block:"nearest"})}
+$("check-answer").addEventListener("click",checkAnswer);
+function getRecords(){try{const v=JSON.parse(localStorage.getItem(STORAGE)||"[]");return Array.isArray(v)?v:[]}catch{return []}}
+function saveRecord(actualRank){const r={version:VERSION,date:new Date().toISOString(),edition:state.edition,mode:state.mode,knowledge:state.knowledge,focus:state.focus,guess1:state.result.rank[0].f.name,guess2:state.result.rank[1]?.f.name||"",guess3:state.result.rank[2]?.f.name||"",recommend:state.result.recommend.f.name,roughMatch:state.result.anti.f.name,personality:personality(state.result.user).short,actual:state.actual,actualRank,initialReason:state.initialReason,keepReason:state.keepReason,answers:state.answers.slice()};try{const arr=getRecords();arr.push(r);localStorage.setItem(STORAGE,JSON.stringify(arr));toast("答え合わせを端末内に記録したよ")}catch{toast("端末保存できなかったけど、結果は楽しめるよ")}}
+function csvEscape(s){const x=String(s??"");return '"'+x.replaceAll('"','""')+'"'}
+function exportCSV(){let arr=getRecords();if(!arr.length){toast("先に答え合わせをしてね");return}const header=["version","date","edition","mode","knowledge","focus","guess1","guess2","guess3","recommend","roughMatch","personality","actual","actualRank","initialReason","keepReason",...Q.map(q=>q.id+" "+q.title)];const lines=[header.map(csvEscape).join(",")];for(const rec of arr){const vals=header.slice(0,16).map(h=>rec[h]);for(let i=0;i<Q.length;i++)vals.push(Q[i].opts[rec.answers?.[i]]?.[0]||"");lines.push(vals.map(csvEscape).join(","))}const blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="smash_mind_friend_test_"+new Date().toISOString().slice(0,10)+".csv";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);toast("CSVを書き出したよ")}
+$("export").addEventListener("click",exportCSV);
+function shareText(){const r=state.result;if(!r)return"";const lines=["🎮 SMASH MIND｜持ちキャラ診断",editionLabel[state.edition],"🎯 第1予想："+r.rank[0].f.name,"👀 第2・第3："+r.rank.slice(1,3).map(x=>x.f.name).join(" / "),"🧠 性格タイプ："+personality(r.user).short,"💚 おすすめ："+r.recommend.f.name,"⚡ 苦手そう："+r.anti.f.name];if(state.actual)lines.push("✅ 実際の持ちキャラ："+state.actual+(state.actual===r.rank[0].f.name?"（的中！）":"（予想外！）"));lines.push("『あなたの持ちキャラ、見抜きます。』 #SMASHMIND");return lines.join("\n")}
+async function copy(){const text=shareText();try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text)}else{const ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.left="-10000px";document.body.append(ta);ta.select();if(!document.execCommand("copy"))throw Error("コピー失敗");ta.remove()}toast("診断結果をコピーしたよ！")}catch{toast("コピーできなかったので、スクショで共有してね")}}
+$("share").addEventListener("click",copy);
+$("restart").addEventListener("click",()=>{state.answers=[];state.at=0;state.actual="";state.recordSaved=false;show("home");$("setup-panel").scrollIntoView({behavior:"smooth",block:"start"})});
+window.addEventListener("keydown",e=>{if(state.page==="quiz"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&["1","2","3","4"].includes(e.key)){if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;answer(Number(e.key)-1)}});
+</script>
+</body></html>
